@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neeraj-kumar-portfolio.vercel.app/sitemap.xml
+Sitemap: https://neeraj-kumar-portfolio-ashy.vercel.app/sitemap.xml
