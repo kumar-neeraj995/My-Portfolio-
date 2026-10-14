@@ -1,65 +1,1281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>my portfolio design</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Neeraj Kumar - Website Developer & B.Tech CSE Student. Building responsive, fast, SEO-friendly websites with HTML5, CSS3, JavaScript, PHP, and WordPress.">
+    <meta name="keywords" content="Neeraj Kumar, Website Developer, Web Developer, WordPress, SEO, HTML5, CSS3, JavaScript, PHP, Mohali">
+    <meta name="author" content="Neeraj Kumar">
+    <title>Neeraj Kumar | Website Developer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">NEERAJ KUMAR</h2>
+    <!-- Background Ambient Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>NEERAJ<span class="logo-dot">.</span>DEV<span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <!-- Search Bar (Live Working Filter) -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search skills, projects, resume..." autocomplete="off">
+                <button type="button" id="searchBtn" class="search-btn">Search</button>
+                <div id="searchResults" class="search-results-dropdown"></div>
             </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Design</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+                <li class="nav-item"><a href="#resume" class="nav-link"><i class="fa-solid fa-file-lines"></i> Resume</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+            </ul>
+
+            <!-- Header Action & Mobile Hamburger -->
+            <div class="nav-actions">
+                <a href="#resume" class="nav-cv-btn">
+                    <i class="fa-solid fa-file-lines"></i> <span>Resume</span>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
+        </nav>
+    </header>
 
-            <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"><button class="btn">Search</button></a>
-        </div>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-status">
+                        <span class="pulse-dot"></span>
+                        <span>Open to Website Developer Roles &amp; Projects</span>
+                    </div>
 
-        <div class="content">
-            <h1>Full Stak Devloper <br><span>Hi,I'm <p class="red-text">Neeraj</p> Kumar<br>
-            From Bihar</span> <br>About Me</h1>
-            <p class="par">I am NEERAJ KUMAR, from Samastipur, Bihar. I have completed Matriculation with 55.2% and <br>
-                Intermediate with 60% from BSEB Board, respectively. Currently pursuing B. Tech (CSE) 4th year <br>
-                from SBSSU Firojpur Punjab.My hobbies are playing chess and listening to music in my free time.<br>
-                There are four members in my family, including me, and I have two siblings. My father is a Farmer,<br>
-                and my mother is a homemaker. My shortterm goal is to learn computer languages and <br>
-                full stack developer, and my long-term goal is to become a professional developer.<br>
-                 My strength is my self-confidence. I know the basics about computers. I am an energetic <br>
-                 and everyday learn something new.</p>
-            <button class="cn"><a href="#">Join us</a></button>
-            <br>
-            <button class="cv"><a href="12.pdf" target="_blank">CV</a></button>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight-name">Neeraj Kumar</span>
+                        <span class="hero-subtitle-line">Website Developer</span>
+                    </h1>
 
-            <div class="form">
-                <h2>Sign up for more info</h2>
-                <input type="email" name="" placeholder="Enter your email id">
-                <input type="password" name="" placeholder="Enter your password">
-                <button class="btnn"><a href="#">login</a></button>
+                    <p class="hero-typing-wrap">
+                        Specialized in <span class="typing-text" id="typingText"></span><span class="cursor">&nbsp;</span>
+                    </p>
 
-                <p class="link">Don't have an account<br>
-                <a href="#">Sign up </a>here</p>
-                <p class="liw">Log in with</p>
+                    <p class="hero-description">
+                        B.Tech Computer Science student and website developer with a 6-month internship at Cyber Core Technology, building responsive, SEO-friendly websites. Skilled in HTML5, CSS3, JavaScript, basic PHP and WordPress, with hands-on experience in SEO and digital marketing, so the sites I build are fast, easy to find and focused on results.
+                    </p>
 
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fa-solid fa-diagram-project"></i> View My Work
+                        </a>
+                        <a href="#resume" class="btn btn-secondary">
+                            <i class="fa-solid fa-file-lines"></i> View Resume
+                        </a>
+                        <a href="12.pdf" target="_blank" class="btn btn-outline" download="Neeraj_Kumar_Resume.pdf">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
 
-                <div class="icons">
-                    <a href="https://www.facebook.com/share/1bE8fHXCR8/"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="https://www.instagram.com/kumarneeraj57?igsh=MWR3c2Z6Y3owMTlvOQ=="><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="https://github.com/neerajkumar43"><ion-icon name="logo-github"></ion-icon></a>
-                    <a href="https://www.linkedin.com/in/neeraj-kumar-892552263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6 Mos</span>
+                            <span class="stat-label">Internship Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Tech &amp; Web Skills</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">7.2</span>
+                            <span class="stat-label">B.Tech CSE CGPA</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Result Focused</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Hero Interactive Terminal Card -->
+                <div class="hero-visual">
+                    <div class="code-card">
+                        <div class="card-header">
+                            <div class="card-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="card-title">developer_profile.js</span>
+                            <button class="copy-code-btn" id="copyCodeBtn" title="Copy code">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <pre><code id="codeSnippet"><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Neeraj Kumar"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Website Developer"</span>,
+  <span class="code-prop">education</span>: <span class="code-string">"B.Tech CSE (SBS State University, Punjab)"</span>,
+  <span class="code-prop">location</span>: <span class="code-string">"Mohali, Punjab"</span>,
+  <span class="code-prop">email</span>: <span class="code-string">"kumarnk15122002@gmail.com"</span>,
+  <span class="code-prop">phone</span>: <span class="code-string">"+91 7070878442"</span>,
+  <span class="code-prop">skills</span>: [
+    <span class="code-string">"HTML5"</span>, <span class="code-string">"CSS3"</span>, <span class="code-string">"JavaScript"</span>, 
+    <span class="code-string">"WordPress"</span>, <span class="code-string">"PHP (basic)"</span>, 
+    <span class="code-string">"On-Page SEO"</span>, <span class="code-string">"Page Speed"</span>, <span class="code-string">"Git"</span>
+  ],
+  <span class="code-prop">internship</span>: <span class="code-string">"Cyber Core Technology (6 Months)"</span>,
+  <span class="code-prop">hireable</span>: <span class="code-boolean">true</span>,
+  <span class="code-prop">passion</span>: <span class="code-string">"Building fast, responsive &amp; SEO-friendly websites"</span>
+};</code></pre>
+                        </div>
+                        <div class="card-footer">
+                            <span class="terminal-status"><i class="fa-solid fa-circle-check"></i> Ready to build &amp; ship client projects</span>
+                            <a href="#contact" class="quick-contact-link">Get in touch &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Floating Social Quick Bar -->
+                    <div class="floating-social-card">
+                        <span class="social-tag">Connect:</span>
+                        <div class="social-icons">
+                            <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/neeraj-kumar-892552263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/kumarneeraj57?igsh=MWR3c2Z6Y3owMTlvOQ==" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1bE8fHXCR8/" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">Know Who <span class="highlight">I Am</span></h2>
+                    <p class="section-subtitle">Website developer and computer science student focused on fast, responsive, and result-oriented web platforms</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card story-card">
+                        <div class="card-icon-badge">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <h3>Professional Summary</h3>
+                        <p>
+                            I am <strong>Neeraj Kumar</strong>, a <strong>B.Tech Computer Science student</strong> and <strong>Website Developer</strong> based in <strong>Mohali, Punjab</strong> with a <strong>6-month internship at Cyber Core Technology</strong>, building responsive, SEO-friendly websites.
+                        </p>
+                        <p>
+                            Skilled in <strong>HTML5, CSS3, JavaScript, basic PHP and WordPress</strong>, with hands-on experience in <strong>SEO and digital marketing</strong>, so the sites I build are fast, easy to find and focused on results. Seeking a Website Developer role to build and ship real client projects.
+                        </p>
+                        <p>
+                            When I'm not coding or optimizing site performance, you will find me strategizing on a <strong>chessboard</strong>, exploring modern UI layouts, or learning new web capabilities.
+                        </p>
+
+                        <div class="about-quick-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Location:</span>
+                                <span class="spec-value">Mohali, Punjab</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Degree:</span>
+                                <span class="spec-value">B.Tech (CSE) 2022 - Present</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Academic Score:</span>
+                                <span class="spec-value">CGPA: 7.2 (SBSSU)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Phone:</span>
+                                <a href="tel:+917070878442" class="spec-value" style="color:var(--accent-orange);">+91 7070878442</a>
+                            </div>
+                            <div class="spec-item" style="grid-column: span 2;">
+                                <span class="spec-label">Email:</span>
+                                <a href="mailto:kumarnk15122002@gmail.com" class="spec-value" style="color:var(--accent-orange);">kumarnk15122002@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cards-col">
+                        <!-- Education Timeline -->
+                        <div class="about-card education-card">
+                            <div class="card-icon-badge">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3>Educational Milestones</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-year">Sep 2022 - Present</span>
+                                        <h4>Bachelor of Technology - Computer Science</h4>
+                                        <p class="institution">Shahid Bhagat Singh State University, Ferozepur, Punjab</p>
+                                        <span class="badge-grade">CGPA: 7.2</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-year">Senior Secondary (12th)</span>
+                                        <h4>Intermediate (Science)</h4>
+                                        <p class="institution">BSEB Board, Bihar</p>
+                                        <span class="badge-grade">First Division (60%)</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-year">Secondary School (10th)</span>
+                                        <h4>Matriculation</h4>
+                                        <p class="institution">BSEB Board, Bihar</p>
+                                        <span class="badge-grade">Scored 55.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Skills Card -->
+                        <div class="about-card strengths-card">
+                            <div class="card-icon-badge">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h3>Professional Soft Skills</h3>
+                            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Core competencies demonstrated in internships and client deliveries:</p>
+                            <div class="soft-skills-badges-wrap">
+                                <div class="soft-skill-badge"><i class="fa-solid fa-check-circle"></i> Attention to Detail</div>
+                                <div class="soft-skill-badge"><i class="fa-solid fa-clock"></i> Time Management</div>
+                                <div class="soft-skill-badge"><i class="fa-solid fa-users"></i> Team Collaboration</div>
+                                <div class="soft-skill-badge"><i class="fa-solid fa-arrows-rotate"></i> Adaptability</div>
+                                <div class="soft-skill-badge"><i class="fa-solid fa-comments"></i> Client Communication</div>
+                                <div class="soft-skill-badge"><i class="fa-solid fa-award"></i> Ownership</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="section experience-section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Career Milestones</span>
+                    <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
+                    <p class="section-subtitle">Real-world track record in website engineering, digital marketing execution, and web systems</p>
+                </div>
+
+                <div class="experience-grid">
+                    <!-- Experience 1: Cyber Core Technology -->
+                    <div class="experience-card">
+                        <div class="exp-card-top">
+                            <div class="exp-role-wrap">
+                                <div class="exp-icon-box">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div class="exp-title-info">
+                                    <h3>Website Development Intern</h3>
+                                    <span class="exp-company-name"><i class="fa-solid fa-building"></i> Cyber Core Technology, Mohali</span>
+                                </div>
+                            </div>
+                            <div class="exp-meta-badges">
+                                <span class="exp-badge-duration"><i class="fa-regular fa-calendar-check"></i> 6 Months</span>
+                                <span class="exp-badge-type"><i class="fa-solid fa-laptop-file"></i> Internship</span>
+                            </div>
+                        </div>
+                        <ul class="exp-bullets-list">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Built and maintained responsive web pages using HTML, CSS and JavaScript, working from client requirements and design layouts.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Tested pages across browsers and screen sizes, fixing layout and functionality issues before delivery.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Applied on-page SEO and speed basics to improve how pages load and rank.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Used Git and GitHub for version control and worked with the team to meet project deadlines.</span>
+                            </li>
+                        </ul>
+                        <div class="exp-tech-pills">
+                            <span class="exp-tech-tag">HTML5</span>
+                            <span class="exp-tech-tag">CSS3</span>
+                            <span class="exp-tech-tag">JavaScript</span>
+                            <span class="exp-tech-tag">Responsive Design</span>
+                            <span class="exp-tech-tag">Cross-Browser Testing</span>
+                            <span class="exp-tech-tag">On-Page SEO</span>
+                            <span class="exp-tech-tag">Page Speed</span>
+                            <span class="exp-tech-tag">Git &amp; GitHub</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: Maa Diagnostic Centre -->
+                    <div class="experience-card">
+                        <div class="exp-card-top">
+                            <div class="exp-role-wrap">
+                                <div class="exp-icon-box">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                                <div class="exp-title-info">
+                                    <h3>Digital Marketing Handler</h3>
+                                    <span class="exp-company-name"><i class="fa-solid fa-hospital"></i> Maa Diagnostic Centre, Shahpur Patori (Family Business)</span>
+                                </div>
+                            </div>
+                            <div class="exp-meta-badges">
+                                <span class="exp-badge-duration"><i class="fa-solid fa-chart-line"></i> Marketing &amp; Growth</span>
+                                <span class="exp-badge-type"><i class="fa-solid fa-handshake"></i> Hands-on Lead</span>
+                            </div>
+                        </div>
+                        <ul class="exp-bullets-list">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Independently built the business's entire online presence from scratch: social media pages, Google Ads, Meta Ads and SEO.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Ran paid ad campaigns and WhatsApp broadcasts, growing patient footfall and sales.</span>
+                            </li>
+                        </ul>
+                        <div class="exp-tech-pills">
+                            <span class="exp-tech-tag">Search Engine Optimization (SEO)</span>
+                            <span class="exp-tech-tag">Google Ads</span>
+                            <span class="exp-tech-tag">Meta Ads</span>
+                            <span class="exp-tech-tag">Social Media Strategy</span>
+                            <span class="exp-tech-tag">WhatsApp Marketing</span>
+                            <span class="exp-tech-tag">Canva Graphics</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: Flipkart Process -->
+                    <div class="experience-card">
+                        <div class="exp-card-top">
+                            <div class="exp-role-wrap">
+                                <div class="exp-icon-box">
+                                    <i class="fa-solid fa-boxes-packing"></i>
+                                </div>
+                                <div class="exp-title-info">
+                                    <h3>Process Associate (IT-enabled Operations)</h3>
+                                    <span class="exp-company-name"><i class="fa-solid fa-truck-fast"></i> Flipkart Process | DRITM, Sector 67, Mohali</span>
+                                </div>
+                            </div>
+                            <div class="exp-meta-badges">
+                                <span class="exp-badge-duration"><i class="fa-regular fa-calendar-check"></i> 6 Months</span>
+                                <span class="exp-badge-type"><i class="fa-solid fa-shield-check"></i> IT Operations</span>
+                            </div>
+                        </div>
+                        <ul class="exp-bullets-list">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Handled order and return cases daily on Flipkart's web-based order management system, following SOPs with high accuracy and TAT compliance.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Investigated order issues, coordinated with internal teams to resolve discrepancies and closed pending cases on time.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Built strong troubleshooting, attention to detail and ability to work with online platforms and tools in a fast-paced setup.</span>
+                            </li>
+                        </ul>
+                        <div class="exp-tech-pills">
+                            <span class="exp-tech-tag">Web Order Management</span>
+                            <span class="exp-tech-tag">SOP Compliance</span>
+                            <span class="exp-tech-tag">TAT Tracking</span>
+                            <span class="exp-tech-tag">Quality Assurance</span>
+                            <span class="exp-tech-tag">Issue Investigation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Tech Stack</span>
+                    <h2 class="section-title">My Technical <span class="highlight">Proficiencies</span></h2>
+                    <p class="section-subtitle">Hands-on technologies and developer tools I leverage to engineer functional digital products</p>
+                </div>
+
+                <div class="skills-categories">
+                    <!-- Front-end Card -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="cat-icon"><i class="fa-solid fa-code"></i></div>
+                            <h3>Front-end</h3>
+                        </div>
+                        <p class="cat-desc">Building clean, interactive, and responsive web user interfaces</p>
+                        <div class="skills-pill-grid">
+                            <div class="skill-pill" data-name="HTML5">
+                                <i class="fa-brands fa-html5"></i> <span>HTML5</span>
+                            </div>
+                            <div class="skill-pill" data-name="CSS3">
+                                <i class="fa-brands fa-css3-alt"></i> <span>CSS3</span>
+                            </div>
+                            <div class="skill-pill" data-name="JavaScript">
+                                <i class="fa-brands fa-js"></i> <span>JavaScript</span>
+                            </div>
+                            <div class="skill-pill" data-name="Responsive design">
+                                <i class="fa-solid fa-mobile-screen-button"></i> <span>Responsive design</span>
+                            </div>
+                            <div class="skill-pill" data-name="Mobile-first design">
+                                <i class="fa-solid fa-tablet-screen-button"></i> <span>Mobile-first design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Back-end & CMS Card -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="cat-icon"><i class="fa-brands fa-wordpress"></i></div>
+                            <h3>Back-end &amp; CMS</h3>
+                        </div>
+                        <p class="cat-desc">WordPress customization, PHP backend logic, themes &amp; plugin integrations</p>
+                        <div class="skills-pill-grid">
+                            <div class="skill-pill" data-name="PHP">
+                                <i class="fa-brands fa-php"></i> <span>PHP (basic)</span>
+                            </div>
+                            <div class="skill-pill" data-name="WordPress">
+                                <i class="fa-brands fa-wordpress-simple"></i> <span>WordPress setup</span>
+                            </div>
+                            <div class="skill-pill" data-name="Themes">
+                                <i class="fa-solid fa-palette"></i> <span>Themes</span>
+                            </div>
+                            <div class="skill-pill" data-name="Plugins">
+                                <i class="fa-solid fa-puzzle-piece"></i> <span>Plugins</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web practices Card -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="cat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <h3>Web practices</h3>
+                        </div>
+                        <p class="cat-desc">Quality engineering for high performance, device compatibility, and organic discoverability</p>
+                        <div class="skills-pill-grid">
+                            <div class="skill-pill" data-name="Cross-browser testing">
+                                <i class="fa-solid fa-browsers"></i> <span>Cross-browser testing</span>
+                            </div>
+                            <div class="skill-pill" data-name="Page speed optimization">
+                                <i class="fa-solid fa-bolt"></i> <span>Page speed optimization</span>
+                            </div>
+                            <div class="skill-pill" data-name="On-page SEO">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i> <span>On-page SEO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Card -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="cat-icon"><i class="fa-solid fa-toolbox"></i></div>
+                            <h3>Tools</h3>
+                        </div>
+                        <p class="cat-desc">Developer toolchain and design software for efficient workflows</p>
+                        <div class="skills-pill-grid">
+                            <div class="skill-pill" data-name="Git & GitHub">
+                                <i class="fa-brands fa-github"></i> <span>Git &amp; GitHub</span>
+                            </div>
+                            <div class="skill-pill" data-name="VS Code">
+                                <i class="fa-solid fa-laptop-code"></i> <span>VS Code</span>
+                            </div>
+                            <div class="skill-pill" data-name="Browser DevTools">
+                                <i class="fa-solid fa-terminal"></i> <span>Browser DevTools</span>
+                            </div>
+                            <div class="skill-pill" data-name="Canva">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Canva</span>
+                            </div>
+                            <div class="skill-pill" data-name="Figma">
+                                <i class="fa-brands fa-figma"></i> <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Card -->
+                    <div class="skill-category-card" style="grid-column: span 2;">
+                        <div class="category-header">
+                            <div class="cat-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <h3>Marketing</h3>
+                        </div>
+                        <p class="cat-desc">Hands-on organic and paid customer acquisition channels</p>
+                        <div class="skills-pill-grid">
+                            <div class="skill-pill" data-name="SEO">
+                                <i class="fa-solid fa-magnifying-glass"></i> <span>SEO</span>
+                            </div>
+                            <div class="skill-pill" data-name="Google Ads">
+                                <i class="fa-brands fa-google"></i> <span>Google Ads</span>
+                            </div>
+                            <div class="skill-pill" data-name="Meta Ads">
+                                <i class="fa-brands fa-meta"></i> <span>Meta Ads</span>
+                            </div>
+                            <div class="skill-pill" data-name="Social media">
+                                <i class="fa-solid fa-share-nodes"></i> <span>Social media</span>
+                            </div>
+                            <div class="skill-pill" data-name="WhatsApp marketing">
+                                <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio Work</span>
+                    <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+                    <p class="section-subtitle">Real-world web projects demonstrating architecture, coding standards, and UI execution</p>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="project-filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress &amp; CMS</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend &amp; UI</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing &amp; Ops</button>
+                </div>
+
+                <!-- Project Cards Grid -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project 1: Aura Bite -->
+                    <div class="project-card" data-category="wordpress" data-keywords="aura bite wordpress html5 css3 javascript responsive cross browser">
+                        <div class="project-img-container">
+                            <div class="project-banner aurabite-bg">
+                                <i class="fa-brands fa-wordpress-simple banner-icon"></i>
+                                <span class="project-tag-badge">WordPress &amp; CMS</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-tags">
+                                <span>WordPress</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Cross-Browser</span>
+                            </div>
+                            <h3 class="project-title">Aura Bite</h3>
+                            <p class="project-desc">
+                                Responsive WordPress website customized with HTML5, CSS3 and JavaScript, tested across browsers and screen sizes for seamless cross-device performance.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Source Code">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <button type="button" class="project-btn live-btn" onclick="openDemoModal('Aura Bite', 'Responsive WordPress website customized with HTML5, CSS3 and JavaScript, tested across browsers and screen sizes.', 'https://github.com/neerajkumar43')">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Coffee With Us -->
+                    <div class="project-card" data-category="wordpress" data-keywords="coffee with us wordpress mobile first html5 css3 javascript on page seo">
+                        <div class="project-img-container">
+                            <div class="project-banner coffee-bg">
+                                <i class="fa-solid fa-mug-hot banner-icon"></i>
+                                <span class="project-tag-badge">WordPress &amp; SEO</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-tags">
+                                <span>WordPress</span>
+                                <span>Mobile-first</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>On-Page SEO</span>
+                            </div>
+                            <h3 class="project-title">Coffee With Us</h3>
+                            <p class="project-desc">
+                                Mobile-first WordPress website customized with HTML5, CSS3 and JavaScript, featuring on-page SEO and page speed optimization.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Source Code">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <button type="button" class="project-btn live-btn" onclick="openDemoModal('Coffee With Us', 'Mobile-first WordPress website customized with HTML5, CSS3 and JavaScript, with on-page SEO.', 'https://github.com/neerajkumar43')">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Maa Diagnostic Centre -->
+                    <div class="project-card" data-category="marketing" data-keywords="maa diagnostic centre marketing seo google ads meta ads whatsapp digital presence">
+                        <div class="project-img-container">
+                            <div class="project-banner marketing-bg">
+                                <i class="fa-solid fa-bullhorn banner-icon"></i>
+                                <span class="project-tag-badge">Marketing &amp; Growth</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-tags">
+                                <span>SEO</span>
+                                <span>Google Ads</span>
+                                <span>Meta Ads</span>
+                                <span>WhatsApp Marketing</span>
+                                <span>Canva</span>
+                            </div>
+                            <h3 class="project-title">Maa Diagnostic Centre Online Presence</h3>
+                            <p class="project-desc">
+                                Independently built complete digital presence from scratch: social media channels, targeted Google &amp; Meta Ads campaigns, and WhatsApp broadcasts growing patient footfall.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Details">
+                                    <i class="fa-solid fa-chart-line"></i> Growth
+                                </a>
+                                <button type="button" class="project-btn live-btn" onclick="openDemoModal('Maa Diagnostic Centre Marketing', 'Independently built business online presence from scratch: social media pages, Google Ads, Meta Ads, SEO, and WhatsApp broadcasts.', 'https://github.com/neerajkumar43')">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Case Study
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Cyber Core Client Web Pages -->
+                    <div class="project-card" data-category="frontend" data-keywords="cyber core web pages client responsive html5 css3 javascript speed">
+                        <div class="project-img-container">
+                            <div class="project-banner landing-bg">
+                                <i class="fa-solid fa-laptop-code banner-icon"></i>
+                                <span class="project-tag-badge">Frontend UI</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Page Speed</span>
+                                <span>Cross-Browser</span>
+                            </div>
+                            <h3 class="project-title">Cyber Core Client Web Pages</h3>
+                            <p class="project-desc">
+                                Built and maintained responsive client web pages working from client design layouts, fixing cross-browser compatibility issues, and applying on-page speed basics.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Source Code">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <button type="button" class="project-btn live-btn" onclick="openDemoModal('Cyber Core Client Web Pages', 'Built and maintained responsive web pages using HTML, CSS and JavaScript, tested across browsers and screen sizes.', 'https://github.com/neerajkumar43')">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Flipkart Operations Tracker -->
+                    <div class="project-card" data-category="marketing" data-keywords="flipkart process order return management web system ops">
+                        <div class="project-img-container">
+                            <div class="project-banner flipkart-bg">
+                                <i class="fa-solid fa-boxes-packing banner-icon"></i>
+                                <span class="project-tag-badge">Web Operations</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-tags">
+                                <span>Order Management</span>
+                                <span>SOP Compliance</span>
+                                <span>Troubleshooting</span>
+                                <span>TAT Tracking</span>
+                            </div>
+                            <h3 class="project-title">Order Operations Management System</h3>
+                            <p class="project-desc">
+                                Web-based order and return case management workflow inspired by Flipkart process operations, tracking issue investigations, SOP conformance, and SLA TAT metrics.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Source Code">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <button type="button" class="project-btn live-btn" onclick="openDemoModal('Order Operations Tracker', 'Handled order and return cases daily on Flipkart web-based order management system following SOPs with high accuracy.', 'https://github.com/neerajkumar43')">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Interactive Developer Portfolio -->
+                    <div class="project-card" data-category="frontend" data-keywords="portfolio developer website responsive javascript css resume printable">
+                        <div class="project-img-container">
+                            <div class="project-banner portfolio-bg">
+                                <i class="fa-solid fa-code banner-icon"></i>
+                                <span class="project-tag-badge">Frontend &amp; Resume</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript ES6+</span>
+                                <span>Live Resume</span>
+                                <span>Printable</span>
+                            </div>
+                            <h3 class="project-title">Interactive Developer Portfolio &amp; Resume</h3>
+                            <p class="project-desc">
+                                Modern website developer portfolio featuring instant search index, dark luxury aesthetic, embedded interactive resume preview, and dedicated printable PDF resume page.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Source Code">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <a href="resume.html" target="_blank" class="project-btn live-btn">
+                                    <i class="fa-solid fa-file-lines"></i> View Resume
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Offerings</span>
+                    <h2 class="section-title">What I Can <span class="highlight">Do For You</span></h2>
+                    <p class="section-subtitle">Delivering high quality software solutions for organizations, clients, and technical teams</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Website Development</h3>
+                        <p>Building clean, responsive, and cross-browser compatible web pages using HTML5, CSS3, and JavaScript.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Semantic HTML5 &amp; CSS3</li>
+                            <li><i class="fa-solid fa-check"></i> Mobile-first architecture</li>
+                            <li><i class="fa-solid fa-check"></i> Cross-browser testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-brands fa-wordpress"></i></div>
+                        <h3>WordPress Setup &amp; CMS</h3>
+                        <p>End-to-end WordPress websites customized with HTML5, CSS3, JavaScript, theme setups, and plugin configuration.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Custom themes &amp; plugins</li>
+                            <li><i class="fa-solid fa-check"></i> Basic PHP modifications</li>
+                            <li><i class="fa-solid fa-check"></i> Easy client content management</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3>On-Page SEO &amp; Speed</h3>
+                        <p>Enhancing web page loading times, responsive viewports, and on-page search engine optimizations to rank higher.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Page speed optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Structured on-page SEO</li>
+                            <li><i class="fa-solid fa-check"></i> Performance testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h3>Digital Marketing &amp; Ads</h3>
+                        <p>Executing paid campaigns, local business outreach, and multi-channel growth through Google Ads and Meta Ads.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Google Ads &amp; Meta Ads</li>
+                            <li><i class="fa-solid fa-check"></i> WhatsApp marketing broadcasts</li>
+                            <li><i class="fa-solid fa-check"></i> Social media branding</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Resume Section -->
+        <section class="section resume-section" id="resume">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Curriculum Vitae</span>
+                    <h2 class="section-title">Verified <span class="highlight">Resume</span></h2>
+                    <p class="section-subtitle">Complete overview of professional experience, technical proficiencies, education, and projects</p>
+                </div>
+
+                <!-- Resume Action Toolbar -->
+                <div class="resume-toolbar-card">
+                    <div class="resume-toolbar-info">
+                        <span class="cta-tag">Neeraj Kumar &bull; Website Developer</span>
+                        <h3>Ready to Build &amp; Ship Real Client Projects</h3>
+                        <p>Review my credentials below, open the dedicated printable version, or download the original PDF file.</p>
+                    </div>
+                    <div class="resume-toolbar-btns">
+                        <a href="resume.html" target="_blank" class="btn btn-primary btn-teal">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Fullscreen
+                        </a>
+                        <button type="button" class="btn btn-secondary" onclick="window.open('resume.html', '_blank')">
+                            <i class="fa-solid fa-print"></i> Print / Save PDF
+                        </button>
+                        <a href="12.pdf" target="_blank" class="btn btn-outline" download="Neeraj_Kumar_Resume.pdf">
+                            <i class="fa-solid fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Resume Document Card Preview -->
+                <div class="resume-paper-frame">
+                    <!-- Sidebar Left -->
+                    <div class="resume-paper-sidebar">
+                        <div class="paper-avatar-badge">NK</div>
+
+                        <!-- Contact -->
+                        <div class="paper-side-sec">
+                            <h4 class="paper-side-title">C O N T A C T</h4>
+                            <div class="paper-contact-item">
+                                <span class="label">Phone</span>
+                                <a href="tel:+917070878442" class="val"><i class="fa-solid fa-phone" style="font-size:0.75rem; color:#14b8a6;"></i> +91 7070878442</a>
+                            </div>
+                            <div class="paper-contact-item">
+                                <span class="label">Email</span>
+                                <a href="mailto:kumarnk15122002@gmail.com" class="val"><i class="fa-solid fa-envelope" style="font-size:0.75rem; color:#14b8a6;"></i> kumarnk15122002@gmail.com</a>
+                            </div>
+                            <div class="paper-contact-item">
+                                <span class="label">Location</span>
+                                <span class="val"><i class="fa-solid fa-location-dot" style="font-size:0.75rem; color:#14b8a6;"></i> Mohali, Punjab</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Skills -->
+                        <div class="paper-side-sec">
+                            <h4 class="paper-side-title">T E C H N I C A L  S K I L L S</h4>
+                            
+                            <div class="paper-skill-cluster">
+                                <span class="paper-cluster-name">Front-end</span>
+                                <div class="paper-skill-tags">
+                                    <span class="paper-skill-tag">HTML5</span>
+                                    <span class="paper-skill-tag">CSS3</span>
+                                    <span class="paper-skill-tag">JavaScript</span>
+                                    <span class="paper-skill-tag">Responsive design</span>
+                                    <span class="paper-skill-tag">Mobile-first design</span>
+                                </div>
+                            </div>
+
+                            <div class="paper-skill-cluster">
+                                <span class="paper-cluster-name">Back-end &amp; CMS</span>
+                                <div class="paper-skill-tags">
+                                    <span class="paper-skill-tag">PHP (basic)</span>
+                                    <span class="paper-skill-tag">WordPress setup</span>
+                                    <span class="paper-skill-tag">Themes</span>
+                                    <span class="paper-skill-tag">Plugins</span>
+                                </div>
+                            </div>
+
+                            <div class="paper-skill-cluster">
+                                <span class="paper-cluster-name">Web practices</span>
+                                <div class="paper-skill-tags">
+                                    <span class="paper-skill-tag">Cross-browser testing</span>
+                                    <span class="paper-skill-tag">Page speed optimization</span>
+                                    <span class="paper-skill-tag">On-page SEO</span>
+                                </div>
+                            </div>
+
+                            <div class="paper-skill-cluster">
+                                <span class="paper-cluster-name">Tools</span>
+                                <div class="paper-skill-tags">
+                                    <span class="paper-skill-tag">Git &amp; GitHub</span>
+                                    <span class="paper-skill-tag">VS Code</span>
+                                    <span class="paper-skill-tag">Browser DevTools</span>
+                                    <span class="paper-skill-tag">Canva</span>
+                                    <span class="paper-skill-tag">Figma</span>
+                                </div>
+                            </div>
+
+                            <div class="paper-skill-cluster">
+                                <span class="paper-cluster-name">Marketing</span>
+                                <div class="paper-skill-tags">
+                                    <span class="paper-skill-tag">SEO</span>
+                                    <span class="paper-skill-tag">Google Ads</span>
+                                    <span class="paper-skill-tag">Meta Ads</span>
+                                    <span class="paper-skill-tag">Social media</span>
+                                    <span class="paper-skill-tag">WhatsApp marketing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="paper-side-sec">
+                            <h4 class="paper-side-title">E D U C A T I O N</h4>
+                            <div class="paper-edu-box">
+                                <span class="paper-edu-degree">Bachelor of Technology</span>
+                                <span class="paper-edu-major">Computer Science</span>
+                                <span class="paper-edu-univ">Shahid Bhagat Singh State University, Ferozepur, Punjab</span>
+                                <div class="paper-edu-meta">
+                                    <span>Sep 2022 - Present</span>
+                                    <span class="paper-edu-cgpa">CGPA: 7.2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Skills -->
+                        <div class="paper-side-sec">
+                            <h4 class="paper-side-title">S O F T  S K I L L S</h4>
+                            <ul class="paper-soft-list">
+                                <li>Attention to Detail</li>
+                                <li>Time Management</li>
+                                <li>Team Collaboration</li>
+                                <li>Adaptability</li>
+                                <li>Client Communication</li>
+                                <li>Ownership</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Main Right Column -->
+                    <div class="resume-paper-main">
+                        <div class="paper-header">
+                            <h1 class="paper-name">NEERAJ KUMAR</h1>
+                            <h2 class="paper-subtitle">WEBSITE DEVELOPER</h2>
+                        </div>
+
+                        <!-- Professional Summary -->
+                        <div class="paper-section">
+                            <h3 class="paper-sec-title">P R O F E S S I O N A L  S U M M A R Y</h3>
+                            <p class="paper-summary-text">
+                                B.Tech Computer Science student and website developer with a 6-month internship at Cyber Core Technology, building responsive, SEO-friendly websites. Skilled in HTML5, CSS3, JavaScript, basic PHP and WordPress, with hands-on experience in SEO and digital marketing, so the sites I build are fast, easy to find and focused on results. Seeking a Website Developer role to build and ship real client projects.
+                            </p>
+                        </div>
+
+                        <!-- Professional Experience -->
+                        <div class="paper-section">
+                            <h3 class="paper-sec-title">P R O F E S S I O N A L  E X P E R I E N C E</h3>
+                            
+                            <!-- Cyber Core -->
+                            <div class="paper-exp-entry">
+                                <div class="paper-exp-head">
+                                    <span class="paper-exp-role">Website Development Intern</span>
+                                    <span class="paper-exp-dur">6 Months</span>
+                                </div>
+                                <span class="paper-exp-org">Cyber Core Technology, Mohali</span>
+                                <ul class="paper-exp-bullets">
+                                    <li>Built and maintained responsive web pages using HTML, CSS and JavaScript, working from client requirements and design layouts.</li>
+                                    <li>Tested pages across browsers and screen sizes, fixing layout and functionality issues before delivery.</li>
+                                    <li>Applied on-page SEO and speed basics to improve how pages load and rank.</li>
+                                    <li>Used Git and GitHub for version control and worked with the team to meet project deadlines.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Maa Diagnostic -->
+                            <div class="paper-exp-entry">
+                                <div class="paper-exp-head">
+                                    <span class="paper-exp-role">Digital Marketing Handler</span>
+                                </div>
+                                <span class="paper-exp-org">Maa Diagnostic Centre, Shahpur Patori (Family Business)</span>
+                                <ul class="paper-exp-bullets">
+                                    <li>Independently built the business's entire online presence from scratch: social media pages, Google Ads, Meta Ads and SEO.</li>
+                                    <li>Ran paid ad campaigns and WhatsApp broadcasts, growing patient footfall and sales.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Flipkart Process -->
+                            <div class="paper-exp-entry">
+                                <div class="paper-exp-head">
+                                    <span class="paper-exp-role">Process Associate (IT-enabled Operations)</span>
+                                    <span class="paper-exp-dur">6 Months</span>
+                                </div>
+                                <span class="paper-exp-org">Flipkart Process | DRITM, Sector 67, Mohali</span>
+                                <ul class="paper-exp-bullets">
+                                    <li>Handled order and return cases daily on Flipkart's web-based order management system, following SOPs with high accuracy and TAT compliance.</li>
+                                    <li>Investigated order issues, coordinated with internal teams to resolve discrepancies and closed pending cases on time.</li>
+                                    <li>Built strong troubleshooting, attention to detail and ability to work with online platforms and tools in a fast-paced setup.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Projects -->
+                        <div class="paper-section">
+                            <h3 class="paper-sec-title">P R O J E C T S</h3>
+                            
+                            <div class="paper-proj-entry">
+                                <h4 class="paper-proj-title">Aura Bite</h4>
+                                <p class="paper-proj-desc">
+                                    Responsive WordPress website customized with HTML5, CSS3 and JavaScript, tested across browsers and screen sizes.
+                                </p>
+                            </div>
+
+                            <div class="paper-proj-entry">
+                                <h4 class="paper-proj-title">Coffee With Us</h4>
+                                <p class="paper-proj-desc">
+                                    Mobile-first WordPress website customized with HTML5, CSS3 and JavaScript, with on-page SEO.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Let's Build Something <span class="highlight">Great Together</span></h2>
+                    <p class="section-subtitle">Feel free to reach out for website development inquiries, job opportunities, or client projects</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Details Card -->
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        <p class="contact-intro">
+                            I am actively interviewing and responsive to messages. Drop an inquiry and I'll get back to you promptly!
+                        </p>
+
+                        <div class="contact-methods">
+                            <!-- Phone -->
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="item-text">
+                                    <span class="item-title">Phone / WhatsApp</span>
+                                    <a href="tel:+917070878442" class="item-link">+91 7070878442</a>
+                                </div>
+                                <button type="button" class="copy-btn" onclick="copyToClipboard('+91 7070878442', this)" title="Copy phone number">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="item-text">
+                                    <span class="item-title">Email Address</span>
+                                    <a href="mailto:kumarnk15122002@gmail.com" class="item-link">kumarnk15122002@gmail.com</a>
+                                </div>
+                                <button type="button" class="copy-btn" onclick="copyToClipboard('kumarnk15122002@gmail.com', this)" title="Copy email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="item-text">
+                                    <span class="item-title">Current Location</span>
+                                    <span class="item-link">Mohali, Punjab (University: SBS State University, Ferozepur)</span>
+                                </div>
+                            </div>
+
+                            <!-- Academic Status -->
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="item-text">
+                                    <span class="item-title">Academic Degree</span>
+                                    <span class="item-link">B.Tech Computer Science (Sep 2022 - Present | CGPA: 7.2)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Profiles -->
+                        <div class="contact-socials-wrap">
+                            <span class="socials-heading">Connect on Social Platforms:</span>
+                            <div class="social-links-row">
+                                <a href="https://github.com/neerajkumar43" target="_blank" rel="noopener noreferrer" class="social-badge" title="GitHub">
+                                    <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/neeraj-kumar-892552263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-badge" title="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i> <span>LinkedIn</span>
+                                </a>
+                                <a href="https://www.instagram.com/kumarneeraj57?igsh=MWR3c2Z6Y3owMTlvOQ==" target="_blank" rel="noopener noreferrer" class="social-badge" title="Instagram">
+                                    <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+                                </a>
+                                <a href="https://www.facebook.com/share/1bE8fHXCR8/" target="_blank" rel="noopener noreferrer" class="social-badge" title="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i> <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Working Contact Form -->
+                    <div class="contact-form-card">
+                        <div class="form-card-header">
+                            <div class="form-tabs">
+                                <button type="button" class="form-tab-btn active" id="tabContact" onclick="switchFormTab('contact')">
+                                    <i class="fa-solid fa-paper-plane"></i> Send Message / Hire
+                                </button>
+                                <button type="button" class="form-tab-btn" id="tabInfo" onclick="switchFormTab('info')">
+                                    <i class="fa-solid fa-bell"></i> Get Updates
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Main Contact Form -->
+                        <form id="contactForm" class="styled-form active" novalidate>
+                            <div class="form-group">
+                                <label for="senderName"><i class="fa-solid fa-user"></i> Your Name *</label>
+                                <input type="text" id="senderName" name="name" class="form-control" placeholder="e.g. John Doe / Recruiter Name" required>
+                                <span class="error-msg" id="nameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="senderEmail"><i class="fa-solid fa-envelope"></i> Your Email *</label>
+                                <input type="email" id="senderEmail" name="email" class="form-control" placeholder="e.g. yourname@company.com" required>
+                                <span class="error-msg" id="emailError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="senderSubject"><i class="fa-solid fa-tag"></i> Subject / Opportunity</label>
+                                <input type="text" id="senderSubject" name="subject" class="form-control" placeholder="e.g. Website Developer Role / Client Project">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="senderMessage"><i class="fa-solid fa-message"></i> Your Message *</label>
+                                <textarea id="senderMessage" name="message" class="form-control" rows="4" placeholder="Hello Neeraj, I came across your portfolio and would like to discuss..." required></textarea>
+                                <span class="error-msg" id="messageError"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block submit-btn" id="submitBtn">
+                                <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                                <span class="btn-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Sending...</span>
+                            </button>
+                        </form>
+
+                        <!-- Updates / Sign-Up Form (Alternate Tab) -->
+                        <form id="signupForm" class="styled-form" novalidate>
+                            <div class="signup-intro">
+                                <h4>Stay Connected</h4>
+                                <p>Subscribe to receive notifications when Neeraj publishes new websites, WordPress themes, or web design case studies.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="subscribeEmail"><i class="fa-solid fa-envelope"></i> Email Address *</label>
+                                <input type="email" id="subscribeEmail" class="form-control" placeholder="Enter your email" required>
+                                <span class="error-msg" id="subError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subscribeInterest"><i class="fa-solid fa-compass"></i> Area of Interest</label>
+                                <select id="subscribeInterest" class="form-control">
+                                    <option value="jobs">Hiring &amp; Job Inquiries</option>
+                                    <option value="freelance">Website Development Projects</option>
+                                    <option value="wordpress">WordPress &amp; SEO Consulting</option>
+                                    <option value="networking">Developer Networking</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="subBtn">
+                                <i class="fa-solid fa-check"></i> Keep Me Updated
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-bracket">&lt;</span>NEERAJ<span class="logo-dot">.</span>DEV<span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p class="footer-tagline">Building fast, responsive &amp; SEO-friendly websites with code, passion &amp; purpose.</p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resume.html" target="_blank">Printable Resume</a></li>
+                        <li><a href="12.pdf" target="_blank" download="Neeraj_Kumar_Resume.pdf">Download Resume (PDF)</a></li>
+                        <li><a href="https://github.com/neerajkumar43" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://www.linkedin.com/in/neeraj-kumar-892552263" target="_blank">LinkedIn Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Neeraj Kumar. All rights reserved.</p>
+                <p class="footer-built">Designed &amp; Developed for Top Website Developer Opportunities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Project Modal -->
+    <div class="modal-backdrop" id="demoModal">
+        <div class="modal-box">
+            <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            <div class="modal-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3 id="modalTitle">Project Title</h3>
+            <p id="modalDesc">Detailed description of the project.</p>
+            <div class="modal-actions">
+                <a href="#" id="modalGithubLink" target="_blank" class="btn btn-secondary">
+                    <i class="fa-brands fa-github"></i> GitHub Repository
+                </a>
+                <button type="button" class="btn btn-primary" id="modalConfirmBtn">
+                    <i class="fa-solid fa-check"></i> Close
+                </button>
+            </div>
         </div>
     </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    <!-- Toast Notification for Form Submissions -->
+    <div class="toast-notification" id="toastNotification">
+        <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="toast-content">
+            <h5 id="toastTitle">Success!</h5>
+            <p id="toastMessage">Your message has been sent.</p>
+        </div>
+        <button class="toast-close" id="toastClose">&times;</button>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>

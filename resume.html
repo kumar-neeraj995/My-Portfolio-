@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neeraj Kumar - Website Developer | Resume</title>
+    <meta name="description" content="Resume of Neeraj Kumar - Website Developer & B.Tech Computer Science Student. Skilled in HTML5, CSS3, JavaScript, WordPress, PHP, and On-Page SEO.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --sidebar-bg: #0b1a2e;
+            --sidebar-card: rgba(255, 255, 255, 0.05);
+            --sidebar-text: #e2e8f0;
+            --sidebar-muted: #94a3b8;
+            --accent-teal: #14b8a6;
+            --accent-cyan: #06b6d4;
+            --accent-badge: #0284c7;
+            --main-bg: #ffffff;
+            --main-text: #1e293b;
+            --main-subtext: #475569;
+            --main-heading: #0f172a;
+            --border-light: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0d14;
+            color: var(--main-text);
+            line-height: 1.5;
+            padding: 30px 15px;
+            min-height: 100vh;
+        }
+
+        /* Top Action Bar (hidden on print) */
+        .top-action-bar {
+            max-width: 960px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+        }
+
+        .action-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, #14b8a6 0%, #0284c7 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(20, 184, 166, 0.35);
+        }
+
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.5);
+        }
+
+        .btn-download {
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-download:hover {
+            background: #334155;
+            color: #ffffff;
+        }
+
+        /* Resume Page Container */
+        .resume-page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: var(--main-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+            display: grid;
+            grid-template-columns: 310px 1fr;
+            min-height: 1280px;
+        }
+
+        /* ---------------- LEFT SIDEBAR ---------------- */
+        .resume-sidebar {
+            background: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 36px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .brand-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0b1a2e;
+            box-shadow: 0 8px 24px rgba(20, 184, 166, 0.35);
+        }
+
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent-teal);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.25);
+            padding-bottom: 6px;
+        }
+
+        /* Contact Items */
+        .contact-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-entry {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .contact-entry .label {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--sidebar-muted);
+            font-weight: 600;
+        }
+
+        .contact-entry .val {
+            font-size: 0.88rem;
+            color: #f1f5f9;
+            text-decoration: none;
+            word-break: break-word;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-entry .val:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Technical Skills Pills */
+        .skills-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-cluster {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .cluster-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #f1f5f9;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            line-height: 1.3;
+        }
+
+        /* Education */
+        .edu-entry {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .edu-degree {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .edu-major {
+            font-size: 0.82rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .edu-school {
+            font-size: 0.8rem;
+            color: var(--sidebar-muted);
+            line-height: 1.35;
+        }
+
+        .edu-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            margin-top: 4px;
+            padding-top: 4px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .edu-cgpa {
+            font-weight: 700;
+            color: var(--accent-teal);
+        }
+
+        /* Soft Skills */
+        .soft-skills-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .soft-skills-list li {
+            font-size: 0.82rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .soft-skills-list li::before {
+            content: "•";
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            line-height: 0;
+        }
+
+        /* ---------------- RIGHT CONTENT ---------------- */
+        .resume-main {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Main Header */
+        .main-header {
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 18px;
+        }
+
+        .candidate-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--main-heading);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .candidate-role {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent-teal);
+            margin-top: 6px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-header-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--accent-teal);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .summary-text {
+            font-size: 0.88rem;
+            color: var(--main-subtext);
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        /* Experience Entries */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .exp-entry {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .exp-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .exp-role {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--main-heading);
+        }
+
+        .exp-duration {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            background: rgba(20, 184, 166, 0.1);
+            padding: 2px 8px;
+            border-radius: 9999px;
+        }
+
+        .exp-company {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 4px;
+        }
+
+        .exp-bullets li {
+            font-size: 0.85rem;
+            color: var(--main-subtext);
+            line-height: 1.55;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -1px;
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Projects Entries */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .proj-entry {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .proj-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--main-heading);
+        }
+
+        .proj-desc {
+            font-size: 0.85rem;
+            color: var(--main-subtext);
+            line-height: 1.55;
+        }
+
+        /* Print Styling */
+        @media print {
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .top-action-bar {
+                display: none !important;
+            }
+
+            .resume-page {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                min-height: auto !important;
+                grid-template-columns: 290px 1fr !important;
+            }
+
+            .resume-sidebar {
+                background: #0b1a2e !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .brand-avatar {
+                background: #14b8a6 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .skill-tag {
+                background: rgba(255, 255, 255, 0.12) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .exp-duration {
+                background: rgba(20, 184, 166, 0.15) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        /* Responsive Layout for Screens */
+        @media (max-width: 820px) {
+            .resume-page {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-sidebar {
+                padding: 30px 20px;
+            }
+
+            .resume-main {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Action Bar -->
+    <div class="top-action-bar">
+        <a href="index.html" class="action-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <div class="action-buttons">
+            <button onclick="window.print()" class="btn-action btn-print">
+                <i class="fa-solid fa-print"></i> Print / Save as PDF
+            </button>
+            <a href="12.pdf" target="_blank" download="Neeraj_Kumar_Resume.pdf" class="btn-action btn-download">
+                <i class="fa-solid fa-download"></i> Download Original PDF
+            </a>
+        </div>
+    </div>
+
+    <!-- Resume Document -->
+    <div class="resume-page" id="resumeDoc">
+        <!-- Left Sidebar -->
+        <aside class="resume-sidebar">
+            <div class="brand-avatar">NK</div>
+
+            <!-- Contact -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">C O N T A C T</h3>
+                <div class="contact-group">
+                    <div class="contact-entry">
+                        <span class="label">Phone</span>
+                        <a href="tel:+917070878442" class="val"><i class="fa-solid fa-phone" style="font-size: 0.75rem; color: var(--accent-teal);"></i> +91 7070878442</a>
+                    </div>
+                    <div class="contact-entry">
+                        <span class="label">Email</span>
+                        <a href="mailto:kumarnk15122002@gmail.com" class="val"><i class="fa-solid fa-envelope" style="font-size: 0.75rem; color: var(--accent-teal);"></i> kumarnk15122002@gmail.com</a>
+                    </div>
+                    <div class="contact-entry">
+                        <span class="label">Location</span>
+                        <span class="val"><i class="fa-solid fa-location-dot" style="font-size: 0.75rem; color: var(--accent-teal);"></i> Mohali, Punjab</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">T E C H N I C A L  S K I L L S</h3>
+                <div class="skills-group">
+                    <!-- Front-end -->
+                    <div class="skill-cluster">
+                        <span class="cluster-title">Front-end</span>
+                        <div class="skill-pills">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive design</span>
+                            <span class="skill-tag">Mobile-first design</span>
+                        </div>
+                    </div>
+
+                    <!-- Back-end & CMS -->
+                    <div class="skill-cluster">
+                        <span class="cluster-title">Back-end &amp; CMS</span>
+                        <div class="skill-pills">
+                            <span class="skill-tag">PHP (basic)</span>
+                            <span class="skill-tag">WordPress setup</span>
+                            <span class="skill-tag">Themes</span>
+                            <span class="skill-tag">Plugins</span>
+                        </div>
+                    </div>
+
+                    <!-- Web practices -->
+                    <div class="skill-cluster">
+                        <span class="cluster-title">Web practices</span>
+                        <div class="skill-pills">
+                            <span class="skill-tag">Cross-browser testing</span>
+                            <span class="skill-tag">Page speed optimization</span>
+                            <span class="skill-tag">On-page SEO</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-cluster">
+                        <span class="cluster-title">Tools</span>
+                        <div class="skill-pills">
+                            <span class="skill-tag">Git &amp; GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Browser DevTools</span>
+                            <span class="skill-tag">Canva</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </div>
+
+                    <!-- Marketing -->
+                    <div class="skill-cluster">
+                        <span class="cluster-title">Marketing</span>
+                        <div class="skill-pills">
+                            <span class="skill-tag">SEO</span>
+                            <span class="skill-tag">Google Ads</span>
+                            <span class="skill-tag">Meta Ads</span>
+                            <span class="skill-tag">Social media</span>
+                            <span class="skill-tag">WhatsApp marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">E D U C A T I O N</h3>
+                <div class="edu-entry">
+                    <span class="edu-degree">Bachelor of Technology</span>
+                    <span class="edu-major">Computer Science</span>
+                    <span class="edu-school">Shahid Bhagat Singh State University, Ferozepur, Punjab</span>
+                    <div class="edu-meta">
+                        <span>Sep 2022 - Present</span>
+                        <span class="edu-cgpa">CGPA: 7.2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">S O F T  S K I L L S</h3>
+                <ul class="soft-skills-list">
+                    <li>Attention to Detail</li>
+                    <li>Time Management</li>
+                    <li>Team Collaboration</li>
+                    <li>Adaptability</li>
+                    <li>Client Communication</li>
+                    <li>Ownership</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right Main Column -->
+        <main class="resume-main">
+            <!-- Header -->
+            <header class="main-header">
+                <h1 class="candidate-name">NEERAJ KUMAR</h1>
+                <h2 class="candidate-role">WEBSITE DEVELOPER</h2>
+            </header>
+
+            <!-- Professional Summary -->
+            <section class="content-section">
+                <h3 class="section-header-title">P R O F E S S I O N A L  S U M M A R Y</h3>
+                <p class="summary-text">
+                    B.Tech Computer Science student and website developer with a 6-month internship at Cyber Core Technology, building responsive, SEO-friendly websites. Skilled in HTML5, CSS3, JavaScript, basic PHP and WordPress, with hands-on experience in SEO and digital marketing, so the sites I build are fast, easy to find and focused on results. Seeking a Website Developer role to build and ship real client projects.
+                </p>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="content-section">
+                <h3 class="section-header-title">P R O F E S S I O N A L  E X P E R I E N C E</h3>
+                <div class="experience-list">
+                    <!-- Experience 1 -->
+                    <div class="exp-entry">
+                        <div class="exp-header">
+                            <span class="exp-role">Website Development Intern</span>
+                            <span class="exp-duration">6 Months</span>
+                        </div>
+                        <span class="exp-company">Cyber Core Technology, Mohali</span>
+                        <ul class="exp-bullets">
+                            <li>Built and maintained responsive web pages using HTML, CSS and JavaScript, working from client requirements and design layouts.</li>
+                            <li>Tested pages across browsers and screen sizes, fixing layout and functionality issues before delivery.</li>
+                            <li>Applied on-page SEO and speed basics to improve how pages load and rank.</li>
+                            <li>Used Git and GitHub for version control and worked with the team to meet project deadlines.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="exp-entry">
+                        <div class="exp-header">
+                            <span class="exp-role">Digital Marketing Handler</span>
+                        </div>
+                        <span class="exp-company">Maa Diagnostic Centre, Shahpur Patori (Family Business)</span>
+                        <ul class="exp-bullets">
+                            <li>Independently built the business's entire online presence from scratch: social media pages, Google Ads, Meta Ads and SEO.</li>
+                            <li>Ran paid ad campaigns and WhatsApp broadcasts, growing patient footfall and sales.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="exp-entry">
+                        <div class="exp-header">
+                            <span class="exp-role">Process Associate (IT-enabled Operations)</span>
+                            <span class="exp-duration">6 Months</span>
+                        </div>
+                        <span class="exp-company">Flipkart Process | DRITM, Sector 67, Mohali</span>
+                        <ul class="exp-bullets">
+                            <li>Handled order and return cases daily on Flipkart's web-based order management system, following SOPs with high accuracy and TAT compliance.</li>
+                            <li>Investigated order issues, coordinated with internal teams to resolve discrepancies and closed pending cases on time.</li>
+                            <li>Built strong troubleshooting, attention to detail and ability to work with online platforms and tools in a fast-paced setup.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="content-section">
+                <h3 class="section-header-title">P R O J E C T S</h3>
+                <div class="projects-list">
+                    <!-- Project 1 -->
+                    <div class="proj-entry">
+                        <h4 class="proj-title">Aura Bite</h4>
+                        <p class="proj-desc">
+                            Responsive WordPress website customized with HTML5, CSS3 and JavaScript, tested across browsers and screen sizes.
+                        </p>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="proj-entry">
+                        <h4 class="proj-title">Coffee With Us</h4>
+                        <p class="proj-desc">
+                            Mobile-first WordPress website customized with HTML5, CSS3 and JavaScript, with on-page SEO.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
