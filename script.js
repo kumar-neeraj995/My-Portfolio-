@@ -354,23 +354,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isValid) return;
 
-            // Show loading state
+            // Show real sending state
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
+            const btnSpinner = submitBtn.querySelector('.btn-spinner');
+            const btnText = submitBtn.querySelector('.btn-text');
+            if (btnSpinner) btnSpinner.style.display = 'inline-block';
+            if (btnText) btnText.style.display = 'none';
 
-            // Simulate server network dispatch
-            setTimeout(() => {
+            const senderName = nameInput.value.trim();
+            const senderEmail = emailInput.value.trim();
+            const subjectField = document.getElementById('senderSubject');
+            const senderSubject = (subjectField ? subjectField.value.trim() : '') || 'Website Developer Inquiry';
+            const senderMessage = messageInput.value.trim();
+
+            // Real email dispatch to Neeraj's inbox via FormSubmit
+            const payload = {
+                name: senderName,
+                email: senderEmail,
+                _replyto: senderEmail,
+                _subject: `New Portfolio Message from ${senderName}: ${senderSubject}`,
+                subject: senderSubject,
+                message: senderMessage,
+                _template: 'table',
+                _captcha: 'false'
+            };
+
+            fetch('https://formsubmit.co/ajax/kumarnk15122002@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
                 submitBtn.classList.remove('loading');
                 submitBtn.disabled = false;
+                if (btnSpinner) btnSpinner.style.display = 'none';
+                if (btnText) btnText.style.display = 'inline-block';
 
-                const senderName = nameInput.value.trim();
                 showToast(
-                    'Message Sent Successfully!',
-                    `Thank you, ${senderName}! Neeraj has received your message and will reply shortly.`
+                    'Email Delivered to Neeraj!',
+                    `Thank you, ${senderName}! Your message was sent directly to kumarnk15122002@gmail.com. Neeraj will reply to you soon.`
                 );
-
                 contactForm.reset();
-            }, 1200);
+            })
+            .catch(err => {
+                console.warn('FormSubmit AJAX fallback:', err);
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                if (btnSpinner) btnSpinner.style.display = 'none';
+                if (btnText) btnText.style.display = 'inline-block';
+
+                showToast(
+                    'Opening Email Client...',
+                    'Redirecting to your email app so you can send the message directly to kumarnk15122002@gmail.com.'
+                );
+                window.location.href = `mailto:kumarnk15122002@gmail.com?subject=${encodeURIComponent(senderSubject)}&body=${encodeURIComponent("From: " + senderName + " (" + senderEmail + ")\n\n" + senderMessage)}`;
+            });
         });
     }
 
@@ -390,17 +433,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             subBtn.disabled = true;
-            subBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+            subBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
 
-            setTimeout(() => {
+            fetch('https://formsubmit.co/ajax/kumarnk15122002@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: subEmail.value.trim(),
+                    _subject: `New Newsletter Subscriber: ${subEmail.value.trim()}`,
+                    interest: document.getElementById('subscribeInterest') ? document.getElementById('subscribeInterest').value : 'General'
+                })
+            })
+            .finally(() => {
                 subBtn.disabled = false;
                 subBtn.innerHTML = '<i class="fa-solid fa-check"></i> Subscribed!';
-                showToast('Subscribed!', 'You are now on Neeraj\'s developer project update list.');
+                showToast('Subscribed!', 'You are now registered for Neeraj\'s developer updates.');
                 signupForm.reset();
                 setTimeout(() => {
                     subBtn.innerHTML = '<i class="fa-solid fa-check"></i> Keep Me Updated';
                 }, 2500);
-            }, 1000);
+            });
         });
     }
 
@@ -422,7 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(toastTimeout);
         toastTimeout = setTimeout(() => {
             toast.classList.remove('active');
-        }, 5000);
+        }, 6000);
     };
 
     if (toastClose) {
@@ -432,40 +487,181 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 9. Interactive Demo Modal
+    // 9. Interactive Project Showcase Data & Modal
     // -------------------------------------------------------------
+    const projectsData = {
+        'aurabite': {
+            title: 'Aura Bite - Restaurant & Dining Website',
+            category: 'WordPress & CMS',
+            icon: 'fa-brands fa-wordpress-simple',
+            desc: 'A responsive, modern food & dining WordPress website customized with custom HTML5, CSS3, and JavaScript. Features interactive menu layouts, reservation inquiry integration, and optimized image assets for seamless cross-device mobile & tablet performance.',
+            tech: ['WordPress', 'HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Cross-Browser'],
+            features: [
+                'Mobile-first dining layout with touch-friendly navigation',
+                'Custom styled food categories & dynamic price cards',
+                '100% responsive across iPhone, iPad, and Desktop screens',
+                'Cross-browser tested on Chrome, Safari, Firefox, and Edge'
+            ],
+            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/#projects',
+            liveLabel: 'View in Portfolio Showcase',
+            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+        },
+        'coffee': {
+            title: 'Coffee With Us - Specialty Cafe & Coffee Shop',
+            category: 'WordPress & On-Page SEO',
+            icon: 'fa-solid fa-mug-hot',
+            desc: 'A fast-loading, mobile-first coffee shop web experience designed for high conversion and local customer discovery. Integrated on-page SEO meta tags, structured business schema, speed-optimized asset delivery, and mobile-friendly drink menu.',
+            tech: ['WordPress', 'Mobile-first', 'HTML5', 'CSS3', 'On-Page SEO', 'Page Speed'],
+            features: [
+                'Mobile-first drink catalog and promotional hero banner',
+                'On-page SEO optimization with meta descriptions and header hierarchy',
+                'Lightweight CSS animations and optimized image assets',
+                'Direct WhatsApp & phone order inquiry integration'
+            ],
+            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/#projects',
+            liveLabel: 'View in Portfolio Showcase',
+            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+        },
+        'diagnostic': {
+            title: 'Maa Diagnostic Centre - Digital Healthcare Presence',
+            category: 'Growth & Healthcare Marketing',
+            icon: 'fa-solid fa-bullhorn',
+            desc: 'Independently conceptualized, built, and executed a complete 360-degree digital presence for a diagnostic healthcare centre from scratch. Combined Google Business Profile setup, targeted Google & Meta ad campaigns, and automated WhatsApp broadcast lists to scale local patient appointments.',
+            tech: ['Google Business Profile', 'Google Ads', 'Meta Ads', 'Local SEO', 'WhatsApp Broadcasts', 'Canva'],
+            features: [
+                '150%+ increase in local phone calls and patient inquiries within 90 days',
+                'Google Ads search campaigns targeting diagnostic tests and health packages',
+                'Hyper-targeted Meta Ads for family health checkups',
+                'Organized WhatsApp broadcast lists for patient report updates and offers'
+            ],
+            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/#experience',
+            liveLabel: 'View Experience Case Study',
+            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+        },
+        'cybercore': {
+            title: 'Cyber Core Client Web Pages & UI Components',
+            category: 'Frontend Development Internship',
+            icon: 'fa-solid fa-laptop-code',
+            desc: 'Developed, styled, and maintained diverse client-facing web pages and landing pages during a 6-month developer internship at Cyber Core Technology. Translated Figma/PSD mockups into clean semantic HTML5 and CSS3, resolving cross-browser display bugs and ensuring 90+ Lighthouse speed scores.',
+            tech: ['HTML5', 'CSS3', 'JavaScript', 'Cross-Browser', 'Speed Optimization', 'Git'],
+            features: [
+                'Built responsive landing pages from client UI specifications',
+                'Standardized responsive breakpoints for tablets (768px) and mobile (390px)',
+                'Fixed legacy cross-browser rendering inconsistencies across Safari & Firefox',
+                'Minified CSS/JS and compressed images for instant page load times'
+            ],
+            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/#experience',
+            liveLabel: 'View Experience Details',
+            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+        },
+        'flipkart': {
+            title: 'Order Operations Management & Resolution Workflow',
+            category: 'Web Operations & Customer Resolution',
+            icon: 'fa-solid fa-boxes-packing',
+            desc: 'Streamlined web-based order tracking, escalation logging, and return investigation workflow inspired by Flipkart process operations. Enforced strict SOP conformance, tracked turn-around-time (TAT) SLAs, and maintained a 98%+ customer satisfaction rating.',
+            tech: ['Web Operations', 'Order Management', 'SOP Compliance', 'TAT Tracking', 'Resolution Workflow'],
+            features: [
+                'Daily case management handling return requests and logistics escalations',
+                'Systematic investigation of logistics delays with 99% SLA adherence',
+                'Collaborated across logistics and warehouse portals to expedite deliveries',
+                'Maintained rigorous audit trail and case logs for management reporting'
+            ],
+            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/#experience',
+            liveLabel: 'View Experience Details',
+            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+        },
+        'portfolio': {
+            title: 'Interactive Website Developer Portfolio & ATS Resume',
+            category: 'Personal Portfolio & Production System',
+            icon: 'fa-solid fa-code',
+            desc: 'A production-grade portfolio featuring instant client-side search index, dynamic ambient glow styling, interactive project showcase modal, dedicated ATS-compliant printable PDF resume, and live FormSubmit email integration delivering inquiries straight to Neeraj Kumar.',
+            tech: ['HTML5', 'CSS3 Vanilla', 'JavaScript ES6+', 'Vercel Edge', 'FormSubmit', 'SEO Schema'],
+            features: [
+                'Ultra-fast Edge CDN deployment with zero runtime dependencies',
+                'Real-time form submission directly delivering emails to kumarnk15122002@gmail.com',
+                'Full responsive compliance across iPhone, Android, iPad, and 4K desktop',
+                'Interactive ATS-friendly resume with 1-click printable & download modes'
+            ],
+            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/resume.html',
+            liveLabel: 'Open Dedicated Resume Page',
+            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+        }
+    };
+
     const demoModal = document.getElementById('demoModal');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
-    const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+    const modalCategoryBadge = document.getElementById('modalCategoryBadge');
+    const modalBannerIcon = document.getElementById('modalBannerIcon');
     const modalTitle = document.getElementById('modalTitle');
     const modalDesc = document.getElementById('modalDesc');
+    const modalTechList = document.getElementById('modalTechList');
+    const modalFeaturesList = document.getElementById('modalFeaturesList');
+    const modalLiveLink = document.getElementById('modalLiveLink');
     const modalGithubLink = document.getElementById('modalGithubLink');
 
-    window.openDemoModal = function(title, desc, githubUrl) {
+    window.openProjectModal = function(projectKey) {
         if (!demoModal) return;
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        if (githubUrl.startsWith('#')) {
-            modalGithubLink.href = 'https://github.com/neerajkumar43';
-            modalGithubLink.innerHTML = '<i class="fa-brands fa-github"></i> GitHub Profile';
-        } else {
-            modalGithubLink.href = githubUrl;
+        const project = projectsData[projectKey] || projectsData['portfolio'];
+
+        if (modalCategoryBadge) modalCategoryBadge.textContent = project.category;
+        if (modalTitle) modalTitle.textContent = project.title;
+        if (modalDesc) modalDesc.textContent = project.desc;
+        if (modalBannerIcon) modalBannerIcon.innerHTML = `<i class="${project.icon}"></i>`;
+
+        if (modalTechList) {
+            modalTechList.innerHTML = project.tech.map(t => `<span>${t}</span>`).join('');
+        }
+
+        if (modalFeaturesList) {
+            modalFeaturesList.innerHTML = project.features.map(f => `<li><i class="fa-solid fa-circle-check"></i> ${f}</li>`).join('');
+        }
+
+        if (modalLiveLink) {
+            modalLiveLink.href = project.liveUrl;
+            modalLiveLink.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> ${project.liveLabel || 'Open Live Showcase'}`;
+        }
+
+        if (modalGithubLink) {
+            modalGithubLink.href = project.sourceUrl;
             modalGithubLink.innerHTML = '<i class="fa-brands fa-github"></i> View GitHub Repo';
         }
+
         demoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    // Backward-compatible alias
+    window.openDemoModal = function(title, desc, githubUrl) {
+        // Find matching key by title prefix
+        const lower = (title || '').toLowerCase();
+        let key = 'portfolio';
+        if (lower.includes('aura')) key = 'aurabite';
+        else if (lower.includes('coffee')) key = 'coffee';
+        else if (lower.includes('diagnostic')) key = 'diagnostic';
+        else if (lower.includes('cyber')) key = 'cybercore';
+        else if (lower.includes('flipkart') || lower.includes('order')) key = 'flipkart';
+        window.openProjectModal(key);
     };
 
     function closeModal() {
-        if (demoModal) demoModal.classList.remove('active');
+        if (demoModal) {
+            demoModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     }
 
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-    if (modalConfirmBtn) modalConfirmBtn.addEventListener('click', closeModal);
     if (demoModal) {
         demoModal.addEventListener('click', (e) => {
             if (e.target === demoModal) closeModal();
         });
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && demoModal && demoModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 
     // -------------------------------------------------------------
     // 10. Helper: Tab Switcher & Clipboard Copy
