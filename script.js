@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     const typingElement = document.getElementById('typingText');
     const words = [
-        'Responsive & Fast Websites',
-        'HTML5, CSS3 & JavaScript',
-        'WordPress Setup & Custom Themes',
-        'On-Page SEO & Page Speed Basics',
-        'Mobile-First Clean Web Interfaces'
+        'Junior Frontend Developer',
+        'React & Modern JavaScript Web Apps',
+        'WordPress & Custom CMS Websites',
+        'AuraBite Full-Stack MERN Project',
+        'Responsive & High-Performance UI'
     ];
     let wordIndex = 0;
     let charIndex = 0;
@@ -136,22 +136,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Build searchable index from the resume and portfolio
     const searchItems = [
-        { title: 'Aura Bite (WordPress Project)', type: 'Project', targetId: 'projects', category: 'project' },
-        { title: 'Coffee With Us (Mobile-First WordPress)', type: 'Project', targetId: 'projects', category: 'project' },
+        { title: 'AuraBite (React, Node, Express, MongoDB, Socket.IO)', type: 'Featured Project', targetId: 'projects', category: 'project' },
+        { title: 'Coffee With Us (Mobile-First WordPress & SEO)', type: 'Project', targetId: 'projects', category: 'project' },
+        { title: 'Cyber Core Client Web Pages & UI', type: 'Project', targetId: 'projects', category: 'project' },
         { title: 'Maa Diagnostic Centre Online Presence', type: 'Project', targetId: 'projects', category: 'project' },
-        { title: 'Cyber Core Client Web Pages', type: 'Project', targetId: 'projects', category: 'project' },
         { title: 'Order Operations Management System', type: 'Project', targetId: 'projects', category: 'project' },
-        { title: 'Interactive Developer Portfolio', type: 'Project', targetId: 'projects', category: 'project' },
-        { title: 'Cyber Core Technology (Web Dev Intern - 6 Mos)', type: 'Experience', targetId: 'experience', category: 'experience' },
-        { title: 'Maa Diagnostic Centre (Digital Marketing Handler)', type: 'Experience', targetId: 'experience', category: 'experience' },
-        { title: 'Flipkart Process (IT Operations - 6 Mos)', type: 'Experience', targetId: 'experience', category: 'experience' },
-        { title: 'WordPress Setup, Themes & Plugins', type: 'Skill', targetId: 'skills', category: 'skill' },
-        { title: 'HTML5, CSS3 & JavaScript', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'Interactive Developer Portfolio & Digital Resume', type: 'Project', targetId: 'projects', category: 'project' },
+        { title: 'React (Hooks, Components, State)', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'JavaScript ES6+ & DOM Manipulation', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'HTML5 Semantic & Accessibility', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'CSS3 / Vanilla CSS Responsive Design', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'Node.js & Express.js REST APIs', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'MongoDB & Mongoose Schemas', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'Socket.IO (Real-Time Websockets)', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'JWT Authentication & Security', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'WordPress Setup, Custom Themes & Plugins', type: 'Skill', targetId: 'skills', category: 'skill' },
         { title: 'PHP (basic) Backend Logic', type: 'Skill', targetId: 'skills', category: 'skill' },
         { title: 'On-Page SEO & Page Speed Optimization', type: 'Skill', targetId: 'skills', category: 'skill' },
-        { title: 'Google Ads & Meta Ads Growth', type: 'Skill', targetId: 'skills', category: 'skill' },
         { title: 'Git & GitHub Version Control', type: 'Skill', targetId: 'skills', category: 'skill' },
-        { title: 'Canva & Figma Design Tools', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'Google Ads & Meta Ads Campaigns', type: 'Skill', targetId: 'skills', category: 'skill' },
+        { title: 'Cyber Core Technology (Web Dev Intern - 6 Mos)', type: 'Experience', targetId: 'experience', category: 'experience' },
+        { title: 'Maa Diagnostic Centre (Growth & Digital Presence)', type: 'Experience', targetId: 'experience', category: 'experience' },
+        { title: 'Flipkart Process (IT Operations - 6 Mos)', type: 'Experience', targetId: 'experience', category: 'experience' },
         { title: 'B.Tech CSE - SBS State University (CGPA 7.2)', type: 'Education', targetId: 'about', category: 'about' },
         { title: 'Verified Resume & Full Preview', type: 'Resume', targetId: 'resume', category: 'resume' },
         { title: 'Download Resume (PDF 12.pdf)', type: 'Document', targetId: 'resume', category: 'resume' },
@@ -196,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             searchResults.innerHTML = `
                 <div class="search-no-results">
-                    No exact match found. Try "React", "Node", "Projects", "Resume", or "Contact".
+                    No exact match found. Try "React", "AuraBite", "WordPress", "Resume", or "Contact".
                 </div>
             `;
             searchResults.classList.add('active');
@@ -261,8 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const filterValue = btn.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filterValue === 'all' || category === filterValue) {
+                const category = (card.getAttribute('data-category') || '').toLowerCase();
+                const matches = filterValue === 'all' || category.split(/\s+/).includes(filterValue) || category.includes(filterValue);
+                if (matches) {
                     card.style.display = 'flex';
                     card.style.opacity = '0';
                     card.style.transform = 'scale(0.95)';
@@ -491,27 +498,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     const projectsData = {
         'aurabite': {
-            title: 'Aura Bite - Restaurant & Dining Website',
-            category: 'WordPress & CMS',
-            icon: 'fa-brands fa-wordpress-simple',
-            desc: 'A responsive, modern food & dining WordPress website customized with custom HTML5, CSS3, and JavaScript. Features interactive menu layouts, reservation inquiry integration, and optimized image assets for seamless cross-device mobile & tablet performance.',
-            tech: ['WordPress', 'HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Cross-Browser'],
+            title: 'AuraBite - Real-Time Food Ordering Web Application',
+            category: 'Full-Stack MERN & WebSockets',
+            icon: 'fa-solid fa-utensils',
+            image: 'assets/projects/aurabite.jpg',
+            desc: 'AuraBite is a comprehensive, production-grade food ordering web application engineered with the MERN stack. Features dynamic menu browsing with real-time category filtering, secure JWT-based authentication and protected API routes, seamless cart state management via Axios, and instant bidirectional order status tracking powered by Socket.IO WebSockets.',
+            tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Socket.IO', 'Axios', 'JWT', 'CSS3'],
             features: [
-                'Mobile-first dining layout with touch-friendly navigation',
-                'Custom styled food categories & dynamic price cards',
-                '100% responsive across iPhone, iPad, and Desktop screens',
-                'Cross-browser tested on Chrome, Safari, Firefox, and Edge'
+                'Real-time order tracking and kitchen notifications powered by Socket.IO',
+                'Secure user authentication and token authorization using JSON Web Tokens (JWT)',
+                'Full RESTful API backend built with Express.js and structured Mongoose schemas',
+                'Modular React component architecture with clean state management and responsive CSS'
             ],
-            liveUrl: 'https://neeraj-kumar-portfolio-ashy.vercel.app/#projects',
-            liveLabel: 'View in Portfolio Showcase',
-            sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
+            liveUrl: 'https://aurabite-ten.vercel.app/',
+            liveLabel: 'Launch Live Food App',
+            sourceUrl: 'https://github.com/kumar-neeraj995/AuraBite'
         },
         'coffee': {
             title: 'Coffee With Us - Specialty Cafe & Coffee Shop',
-            category: 'WordPress & On-Page SEO',
+            category: 'WordPress & Responsive UI',
             icon: 'fa-solid fa-mug-hot',
+            image: 'assets/projects/coffee.jpg',
             desc: 'A fast-loading, mobile-first coffee shop web experience designed for high conversion and local customer discovery. Integrated on-page SEO meta tags, structured business schema, speed-optimized asset delivery, and mobile-friendly drink menu.',
-            tech: ['WordPress', 'Mobile-first', 'HTML5', 'CSS3', 'On-Page SEO', 'Page Speed'],
+            tech: ['WordPress', 'HTML5', 'CSS3', 'Mobile-First', 'On-Page SEO', 'Page Speed'],
             features: [
                 'Mobile-first drink catalog and promotional hero banner',
                 'On-page SEO optimization with meta descriptions and header hierarchy',
@@ -523,9 +532,10 @@ document.addEventListener('DOMContentLoaded', () => {
             sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
         },
         'diagnostic': {
-            title: 'Maa Diagnostic Centre - Digital Healthcare Presence',
-            category: 'Growth & Healthcare Marketing',
+            title: 'Maa Diagnostic Centre - 360° Digital Healthcare Growth',
+            category: 'Healthcare Growth & Digital Operations',
             icon: 'fa-solid fa-bullhorn',
+            image: 'assets/projects/diagnostic.jpg',
             desc: 'Independently conceptualized, built, and executed a complete 360-degree digital presence for a diagnostic healthcare centre from scratch. Combined Google Business Profile setup, targeted Google & Meta ad campaigns, and automated WhatsApp broadcast lists to scale local patient appointments.',
             tech: ['Google Business Profile', 'Google Ads', 'Meta Ads', 'Local SEO', 'WhatsApp Broadcasts', 'Canva'],
             features: [
@@ -539,11 +549,12 @@ document.addEventListener('DOMContentLoaded', () => {
             sourceUrl: 'https://github.com/kumar-neeraj995/My-Portfolio-'
         },
         'cybercore': {
-            title: 'Cyber Core Client Web Pages & UI Components',
+            title: 'Cyber Core Technology - Frontend Client Solutions',
             category: 'Frontend Development Internship',
             icon: 'fa-solid fa-laptop-code',
+            image: 'assets/projects/cybercore.jpg',
             desc: 'Developed, styled, and maintained diverse client-facing web pages and landing pages during a 6-month developer internship at Cyber Core Technology. Translated Figma/PSD mockups into clean semantic HTML5 and CSS3, resolving cross-browser display bugs and ensuring 90+ Lighthouse speed scores.',
-            tech: ['HTML5', 'CSS3', 'JavaScript', 'Cross-Browser', 'Speed Optimization', 'Git'],
+            tech: ['HTML5', 'CSS3', 'JavaScript ES6+', 'Responsive Design', 'Lighthouse 90+', 'Git'],
             features: [
                 'Built responsive landing pages from client UI specifications',
                 'Standardized responsive breakpoints for tablets (768px) and mobile (390px)',
@@ -598,6 +609,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalFeaturesList = document.getElementById('modalFeaturesList');
     const modalLiveLink = document.getElementById('modalLiveLink');
     const modalGithubLink = document.getElementById('modalGithubLink');
+    const modalImageWrap = document.getElementById('modalImageWrap');
+    const modalImg = document.getElementById('modalImg');
 
     window.openProjectModal = function(projectKey) {
         if (!demoModal) return;
@@ -607,6 +620,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalTitle) modalTitle.textContent = project.title;
         if (modalDesc) modalDesc.textContent = project.desc;
         if (modalBannerIcon) modalBannerIcon.innerHTML = `<i class="${project.icon}"></i>`;
+
+        if (modalImageWrap && modalImg) {
+            if (project.image) {
+                modalImg.src = project.image;
+                modalImg.alt = project.title;
+                modalImageWrap.style.display = 'block';
+            } else {
+                modalImageWrap.style.display = 'none';
+            }
+        }
 
         if (modalTechList) {
             modalTechList.innerHTML = project.tech.map(t => `<span>${t}</span>`).join('');
